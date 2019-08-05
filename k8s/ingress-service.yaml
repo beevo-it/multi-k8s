@@ -10,6 +10,8 @@ metadata:
 spec:
   tls:
     - hosts:
+        - f3rrari.com
+        - www.f3rrari.com
         - k8s-multi.com
         - www.k8s-multi.com
       secretName: k8s-multi-com
@@ -26,6 +28,28 @@ spec:
               serviceName: server-cluster-ip-service
               servicePort: 5000
     - host: www.k8s-multi.com
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: client-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            backend:
+              serviceName: server-cluster-ip-service
+              servicePort: 5000
+    - host: f3rrari.com
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: client-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            backend:
+              serviceName: server-cluster-ip-service
+              servicePort: 5000
+    - host: www.f3rrari.com
       http:
         paths:
           - path: /?(.*)
