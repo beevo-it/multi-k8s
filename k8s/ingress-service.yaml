@@ -12,7 +12,7 @@ spec:
     - hosts:
         - f3rrari.com
         - www.f3rrari.com
-      secretName: fe3rrari-com
+      secretName: f3rrari-com
   rules:
     - host: f3rrari.com
       http:
