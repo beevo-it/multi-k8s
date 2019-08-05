@@ -11,6 +11,8 @@ spec:
   dnsNames:
     - k8s-multi.com
     - www.k8s-multi.com
+    - f3rrari.com
+    - www.f3rrari.com
   acme:
     config:
       - http01:
@@ -18,3 +20,5 @@ spec:
         domains:
           - k8s-multi.com
           - www.k8s-multi.com
+          - f3rrari.com
+          - www.f3rrari.com
